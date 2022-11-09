@@ -159,3 +159,17 @@ console.log(
   'Likes count',
   likes(['Alex', 'Ana', 'Jacob', 'Mark', 'Max', 'Susana'])
 );
+
+//Built tree according to number of floors
+function towerBuilder(floors) {
+  let space,
+    star,
+    tower = [];
+  for (let i = 1; i <= floors; i++) {
+    space = ' '.repeat(floors - i);
+    star = '*'.repeat(2 * i - 1);
+    tower.push(`${space}${star}${space}`);
+  }
+  return tower;
+}
+console.log('Built tree', towerBuilder(10));
