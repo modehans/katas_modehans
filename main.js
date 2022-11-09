@@ -112,3 +112,17 @@ const duplicateCount = (text) =>
   ).length;
 
 console.log('Letters duplicate count', duplicateCount('indivisibility'));
+
+//Replace With Alphabet Position
+function alphabetPosition(text) {
+  return text
+    .toUpperCase()
+    .split('')
+    .map((a) => a.charCodeAt() - 64)
+    .filter((a) => a > 0 && a < 27)
+    .join(' ');
+}
+console.log(
+  'Alphabet position',
+  alphabetPosition("The sunset sets at twelve o'clock.")
+);
