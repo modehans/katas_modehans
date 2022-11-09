@@ -202,3 +202,14 @@ function isTriangle(a, b, c) {
   return a + b > c && a + c > b && c + b > a;
 }
 console.log('¿Es un triángulo?', isTriangle(3, 4, 6));
+
+//Unique In Order
+
+const uniqueInOrder = (iterable) => {
+  return [...iterable].filter((el, i) => el !== iterable[i - 1]);
+};
+
+console.log(
+  'Array de elementos únicos cercanos',
+  uniqueInOrder('AAAABBBCCDAABBBb')
+);
