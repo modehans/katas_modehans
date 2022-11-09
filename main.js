@@ -73,3 +73,13 @@ const sumDigPow = (a, b) => {
 };
 
 console.log('sunDigPow', sumDigPow(5, 100));
+
+// Tribonacci Sequence
+const tribonacci = (s, n) => {
+  for (let i = 0; i < n - 3; i++) {
+    s.push(s[i] + s[i + 1] + s[i + 2]);
+  }
+  return s.slice(0, n);
+};
+
+console.log('Tribonacci', tribonacci([1, 2, 3], 10));
