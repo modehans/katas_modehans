@@ -24,3 +24,11 @@ console.log('Si es un pangram', isPangram('abcd efghijk lmno pqrs tuvwxyz'));
 const breackCamelCase = (string) => string.replace(/[A-Z]/g, ' $&');
 
 console.log('Romper palabras camelCase', breackCamelCase('breackCamelCase'));
+
+// encuentra el número no repetido
+const stray = (numbers) =>
+  +numbers.filter(
+    (value) => numbers.indexOf(value) === numbers.lastIndexOf(value)
+  );
+
+console.log('Find the stray number', stray([17, 17, 3, 17, 17, 17, 17]));
