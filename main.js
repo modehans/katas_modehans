@@ -241,3 +241,23 @@ console.log(
     ]
   )
 );
+
+//Añadir a un número ceros a la izquierda en un array
+
+const result = calculatemultiplication(
+  [
+    [2, 4, 6],
+    [8, 10, 8],
+    [6, 4, 2],
+  ],
+  [
+    [1, 3, 5],
+    [7, 9, 7],
+    [5, 3, 1],
+  ]
+);
+
+const addZero = (array) =>
+  array.map((element) => element.toString().padStart(3, '0'));
+
+console.log('Array add Zeros', addZero(result));
