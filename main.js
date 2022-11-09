@@ -185,3 +185,8 @@ console.log(
   'Take a Ten Minutes Walk',
   isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'])
 );
+
+//Cambiar última letra de una palabra por el símbolo $
+const changeLastLetter = (string) => string.toString().slice(0, -1) + '$';
+
+console.log('Change last letter to $', changeLastLetter('Buenos días'));
