@@ -173,3 +173,15 @@ function towerBuilder(floors) {
   return tower;
 }
 console.log('Built tree', towerBuilder(10));
+
+function isValidWalk(walk) {
+  const count = (val) => walk.filter((el) => el === val).length;
+  return (
+    walk.length == 10 && count('n') == count('s') && count('w') == count('e')
+  );
+}
+
+console.log(
+  'Take a Ten Minutes Walk',
+  isValidWalk(['n', 's', 'n', 's', 'n', 's', 'n', 's', 'n', 's'])
+);
