@@ -83,3 +83,19 @@ const tribonacci = (s, n) => {
 };
 
 console.log('Tribonacci', tribonacci([1, 2, 3], 10));
+
+//Duplicate encoder
+
+const duplicateEncode = (word) => {
+  return word
+    .toLowerCase()
+    .split('')
+    .map((a) =>
+      word.toLowerCase().indexOf(a) === word.toLowerCase().lastIndexOf(a)
+        ? '('
+        : ')'
+    )
+    .join('');
+};
+
+console.log('Duplicate encode', duplicateEncode('Success'));
