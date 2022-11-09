@@ -196,3 +196,9 @@ function arrayDiff(a, b) {
   return a.filter((item) => !b.includes(item));
 }
 console.log('Array difference', arrayDiff([1, 3, 4], [4]));
+
+//Is this a triangle?
+function isTriangle(a, b, c) {
+  return a + b > c && a + c > b && c + b > a;
+}
+console.log('¿Es un triángulo?', isTriangle(3, 4, 6));
