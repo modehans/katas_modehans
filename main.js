@@ -213,3 +213,11 @@ console.log(
   'Array de elementos únicos cercanos',
   uniqueInOrder('AAAABBBCCDAABBBb')
 );
+
+//Sort the odd
+const sortOddArray = (array) => {
+  const odds = array.filter((item) => item % 2).sort((a, b) => a - b);
+  return array.map((item) => (item % 2 ? odds.shift() : item));
+};
+
+console.log('Ordena los impares', sortOddArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
