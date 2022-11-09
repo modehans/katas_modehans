@@ -19,3 +19,8 @@ console.log(
   isPangram('Esto no es un pangram, ni se le parece')
 );
 console.log('Si es un pangram', isPangram('abcd efghijk lmno pqrs tuvwxyz'));
+
+//Breack CammelCase
+const breackCamelCase = (string) => string.replace(/[A-Z]/g, ' $&');
+
+console.log('Romper palabras camelCase', breackCamelCase('breackCamelCase'));
