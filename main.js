@@ -126,3 +126,13 @@ console.log(
   'Alphabet position',
   alphabetPosition("The sunset sets at twelve o'clock.")
 );
+
+//Moving Zeros To The End
+function moveZeros(arr) {
+  return [...arr.filter((a) => a !== 0), ...arr.filter((a) => a === 0)];
+}
+
+console.log(
+  'Moving Zeros To The End',
+  moveZeros([false, 1, 0, 1, 2, 0, 1, 3, 'a'])
+);
