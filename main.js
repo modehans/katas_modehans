@@ -190,3 +190,9 @@ console.log(
 const changeLastLetter = (string) => string.toString().slice(0, -1) + '$';
 
 console.log('Change last letter to $', changeLastLetter('Buenos días'));
+
+//Array difference
+function arrayDiff(a, b) {
+  return a.filter((item) => !b.includes(item));
+}
+console.log('Array difference', arrayDiff([1, 3, 4], [4]));
