@@ -225,8 +225,7 @@ console.log('Ordena los impares', sortOddArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
 //Multiplica cada fila por cada columna dados dos arrays Prueba KairosDS
 
 const calculatemultiplication = (arr1, arr2) =>
-  arr1.map((f, i) => f.map((n, j) => n * arr2[j][i]));
-
+  arr1.map((f, i) => f.map((n, j) => n * arr2[j][i])).flat();
 console.log(
   'Multiplica cada fila por columna',
   calculatemultiplication(
