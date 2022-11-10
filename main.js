@@ -222,13 +222,33 @@ const sortOddArray = (array) => {
 
 console.log('Ordena los impares', sortOddArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
 
+//Multiplica cada fila por cada columna dados dos arrays matriz
+const calculateElementRowColumTwoLevels = (arr1, arr2) =>
+  arr1.map((f, i) => f.map((n, j) => n * arr2[j][i]));
+
+console.log(
+  'Multiplica cada fila por columna array de dos niveles',
+  calculateElementRowColumTwoLevels(
+    [
+      [2, 4, 6],
+      [8, 10, 8],
+      [6, 4, 2],
+    ],
+    [
+      [1, 3, 5],
+      [7, 9, 7],
+      [5, 3, 1],
+    ]
+  )
+);
+
 //Multiplica cada fila por cada columna dados dos arrays Prueba KairosDS
 
-const calculatemultiplication = (arr1, arr2) =>
+const calculateElementRowColum = (arr1, arr2) =>
   arr1.map((f, i) => f.map((n, j) => n * arr2[j][i])).flat();
 console.log(
   'Multiplica cada fila por columna',
-  calculatemultiplication(
+  calculateElementRowColum(
     [
       [2, 4, 6],
       [8, 10, 8],
@@ -244,7 +264,7 @@ console.log(
 
 //Añadir a un número ceros a la izquierda en un array
 
-const result = calculatemultiplication(
+const result = calculateElementRowColum(
   [
     [2, 4, 6],
     [8, 10, 8],
