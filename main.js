@@ -318,8 +318,3 @@ console.log(
     ]
   )
 );
-
-let resultmatrix = [
-  [-2, -2],
-  [14, 17],
-];
