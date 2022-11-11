@@ -318,3 +318,22 @@ console.log(
     ]
   )
 );
+
+//Diagonal Diference HakerRank
+
+function diagonalDifference(arr) {
+  return Math.abs(
+    arr
+      .map((el, i) => el[i] - el[arr.length - 1 - i])
+      .reduce((a, b) => a + b, 0)
+  );
+}
+
+console.log(
+  'Diagonal Diference Matrix',
+  diagonalDifference([
+    [11, 2, 4],
+    [4, 5, 6],
+    [10, 8, -12],
+  ])
+);
