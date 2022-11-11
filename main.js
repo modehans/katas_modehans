@@ -281,3 +281,45 @@ const addZero = (array) =>
   array.map((element) => element.toString().padStart(3, '0'));
 
 console.log('Array add Zeros', addZero(result));
+
+//Multiplicación de matrices
+
+const matrixMultiplication = (array1, array2) => {
+  const columArray1 = array1[0].length;
+  const rowArray2 = array2.length;
+  if (columArray1 === rowArray2) {
+    let result = [];
+    for (let i = 0; i < array1.length; i++) {
+      result[i] = [];
+      for (let j = 0; j < array2[0].length; j++) {
+        let sum = 0;
+        for (let k = 0; k < array1[0].length; k++) {
+          sum += array1[i][k] * array2[k][j];
+        }
+        result[i][j] = sum;
+      }
+    }
+    return result;
+  }
+  return 'El número columnas de la matriz 1 debe ser igual al número de filas de la matriz 2';
+};
+
+console.log(
+  'Matrix multiplication:',
+  matrixMultiplication(
+    [
+      [2, 0],
+      [1, 3],
+      [5, 2],
+    ],
+    [
+      [-1, -1, 3],
+      [5, 6, 4],
+    ]
+  )
+);
+
+let resultmatrix = [
+  [-2, -2],
+  [14, 17],
+];
