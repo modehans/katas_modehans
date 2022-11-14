@@ -344,3 +344,16 @@ const contarOvejas = (ovejas) =>
     .filter((oveja) => oveja.color === 'rojo')
     .filter((oveja) => oveja.name.match(/na/gi));
 
+//Contar regalos
+
+function listGifts(letter) {
+  const arr = letter
+    .split(' ')
+    .filter((gift) => !gift.startsWith('_') && gift !== '');
+  return arr.reduce((count, gift) => {
+    count[gift] = (count[gift] || 0) + 1;
+    return count;
+  }, {});
+}
+
+console.log(listGifts('bici coche balón _playstation bici  coche   peluche'));
