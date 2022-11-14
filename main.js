@@ -337,3 +337,10 @@ console.log(
     [10, 8, -12],
   ])
 );
+
+//Contar ovejas AdventJs
+const contarOvejas = (ovejas) =>
+  ovejas
+    .filter((oveja) => oveja.color === 'rojo')
+    .filter((oveja) => oveja.name.match(/na/gi));
+
