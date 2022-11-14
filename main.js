@@ -357,3 +357,32 @@ function listGifts(letter) {
 }
 
 console.log(listGifts('bici coche balón _playstation bici  coche   peluche'));
+
+//El grinch quiere fastidiar la navidad AdventJS
+
+function isValid(letter) {
+  const arr = letter.split(' ');
+  const vacio = arr.filter((el) => el === '()').length;
+  const noAbre = arr.filter(
+    (el) => el.startsWith(')' || '}').length || el.endsWith('(' || '{')
+  ).length;
+
+  const noCierra = arr.filter(
+    (el) =>
+      (el.startsWith('(') && !el.endsWith(')')) ||
+      (el.startsWith('{') && !el.endsWith('}'))
+  ).length;
+
+  if (vacio || noAbre || noCierra !== 0) {
+    return false;
+  }
+  return true;
+}
+
+console.log(isValid('bici coche (balón) bici coche peluche'));
+console.log(isValid('(muñeca) consola bici'));
+console.log(isValid('bici coche (balón bici coche'));
+console.log(isValid('peluche (bici [coche) bici coche balón'));
+console.log(isValid('(peluche {) bici'));
+console.log(isValid('() bici'));
+//no me funciona en la página de AdventJS
