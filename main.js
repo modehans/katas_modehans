@@ -399,3 +399,13 @@ const unique = (array) => {
 };
 
 console.log('unique', unique([1, 2, 1, 2, 3, 4, 5, 3]));
+
+//Filtrar valores únicos con SET
+const uniqueSet = (array) => {
+  let mySet = new Set();
+  array.map((element) => mySet.add(element));
+  const newArray = Array.from(mySet);
+  return newArray;
+};
+
+console.log('uniqueSet', uniqueSet([1, 2, 1, 2, 3, 4, 5, 3]));
