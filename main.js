@@ -1,6 +1,6 @@
 'use strict';
 
-//Crear Factorial de un número con una función recurrente.
+//Crear Factorial de un número con una función recurrente o recursiva.
 const factorial = (n) => {
   if (n === 1 || 0) {
     return 1;
