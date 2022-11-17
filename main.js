@@ -2,12 +2,12 @@
 
 //Crear Factorial de un número con una función recurrente o recursiva.
 const factorial = (n) => {
-  if (n === 1 || 0) {
+  if (n === 1 || n === 0) {
     return 1;
   }
   return n * factorial(n - 1);
 };
-console.log(factorial(6));
+console.log('factorial', factorial(7));
 
 // Detect Pangram
 const isPangram = (string) => {
@@ -409,3 +409,12 @@ const uniqueSet = (array) => {
 };
 
 console.log('uniqueSet', uniqueSet([1, 2, 1, 2, 3, 4, 5, 3]));
+
+//Traductor mimimimi
+const traductorMiMiMi = (word) => {
+  return word.replace(/[aeiou]/g, 'i').replace(/[AEIOU]/g, 'I');
+};
+console.log(
+  'Traductor mimimi',
+  traductorMiMiMi('Me encanta programar. Estoy muy ilusionada')
+);
