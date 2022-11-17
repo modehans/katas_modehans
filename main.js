@@ -418,3 +418,15 @@ console.log(
   'Traductor mimimi',
   traductorMiMiMi('Me encanta programar. Estoy muy ilusionada')
 );
+
+//Mini-Max Sum HackerRank
+
+function miniMaxSum(arr) {
+  let sortArray = arr.sort((a, b) => a - b);
+  let minimum = sortArray
+    .slice(0, sortArray.length - 1)
+    .reduce((a, b) => a + b);
+  let maximum = sortArray.slice(1).reduce((a, b) => a + b);
+  console.log(minimum, maximum);
+}
+miniMaxSum([13, 12, 9, 4, 2]);
