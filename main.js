@@ -386,3 +386,16 @@ console.log(isValid('peluche (bici [coche) bici coche balón'));
 console.log(isValid('(peluche {) bici'));
 console.log(isValid('() bici'));
 //no me funciona en la página de AdventJS
+
+//Filtrar valores únicos sin SET
+const unique = (array) => {
+  let result = [];
+  array.map((element) => {
+    if (!result.includes(element)) {
+      result.push(element);
+    }
+  });
+  return result;
+};
+
+console.log('unique', unique([1, 2, 1, 2, 3, 4, 5, 3]));
