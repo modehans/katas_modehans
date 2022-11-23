@@ -26,9 +26,7 @@ console.log('Si es un pangram', isPangram('abcd efghijk lmno pqrs tuvwxyz'));
 
 //sum Mixed Array
 
-function sumMix(x) {
-  return x.reduce((acc, item) => acc + parseInt(item), 0);
-}
+const sumMix = (x) => x.reduce((acc, item) => acc + parseInt(item), 0);
 
 //Breack CammelCase
 
