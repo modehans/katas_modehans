@@ -1,15 +1,18 @@
 'use strict';
 
 //Crear Factorial de un número con una función recurrente o recursiva.
+
 const factorial = (n) => {
   if (n === 1 || n === 0) {
     return 1;
   }
   return n * factorial(n - 1);
 };
+
 console.log('factorial', factorial(7));
 
 // Detect Pangram
+
 const isPangram = (string) => {
   return string.match(/([a-z])(?!.*\1)/gi).length === 26;
 };
@@ -18,14 +21,23 @@ console.log(
   'No es un pangram',
   isPangram('Esto no es un pangram, ni se le parece')
 );
+
 console.log('Si es un pangram', isPangram('abcd efghijk lmno pqrs tuvwxyz'));
 
+//sum Mixed Array
+
+function sumMix(x) {
+  return x.reduce((acc, item) => acc + parseInt(item), 0);
+}
+
 //Breack CammelCase
+
 const breackCamelCase = (string) => string.replace(/[A-Z]/g, ' $&');
 
 console.log('Romper palabras camelCase', breackCamelCase('breackCamelCase'));
 
 // encuentra el número no repetido
+
 const stray = (numbers) =>
   +numbers.filter(
     (value) => numbers.indexOf(value) === numbers.lastIndexOf(value)
@@ -56,6 +68,7 @@ console.log(
 );
 
 //Take a Number And Sum Its Digits Raised To The Consecutive Powers And ....¡Eureka!!
+
 const sumDigPow = (a, b) => {
   let arr = [];
   for (let i = a; i < b; i++) {
@@ -75,6 +88,7 @@ const sumDigPow = (a, b) => {
 console.log('sunDigPow', sumDigPow(5, 100));
 
 // Tribonacci Sequence
+
 const tribonacci = (s, n) => {
   for (let i = 0; i < n - 3; i++) {
     s.push(s[i] + s[i + 1] + s[i + 2]);
@@ -101,6 +115,7 @@ const duplicateEncode = (word) => {
 console.log('Duplicate encode', duplicateEncode('Success'));
 
 //Counting duplicates
+
 const duplicateCount = (text) =>
   (
     text
@@ -114,6 +129,7 @@ const duplicateCount = (text) =>
 console.log('Letters duplicate count', duplicateCount('indivisibility'));
 
 //Replace With Alphabet Position
+
 function alphabetPosition(text) {
   return text
     .toUpperCase()
@@ -122,12 +138,14 @@ function alphabetPosition(text) {
     .filter((a) => a > 0 && a < 27)
     .join(' ');
 }
+
 console.log(
   'Alphabet position',
   alphabetPosition("The sunset sets at twelve o'clock.")
 );
 
 //Moving Zeros To The End
+
 function moveZeros(arr) {
   return [...arr.filter((a) => a !== 0), ...arr.filter((a) => a === 0)];
 }
@@ -138,6 +156,7 @@ console.log(
 );
 
 //Who likes it?
+
 const likes = (names) => {
   switch (names.length) {
     case 0:
@@ -161,6 +180,7 @@ console.log(
 );
 
 //Built tree according to number of floors
+
 function towerBuilder(floors) {
   let space,
     star,
@@ -172,6 +192,7 @@ function towerBuilder(floors) {
   }
   return tower;
 }
+
 console.log('Built tree', towerBuilder(10));
 
 function isValidWalk(walk) {
@@ -187,20 +208,25 @@ console.log(
 );
 
 //Cambiar última letra de una palabra por el símbolo $
+
 const changeLastLetter = (string) => string.toString().slice(0, -1) + '$';
 
 console.log('Change last letter to $', changeLastLetter('Buenos días'));
 
 //Array difference
+
 function arrayDiff(a, b) {
   return a.filter((item) => !b.includes(item));
 }
+
 console.log('Array difference', arrayDiff([1, 3, 4], [4]));
 
 //Is this a triangle?
+
 function isTriangle(a, b, c) {
   return a + b > c && a + c > b && c + b > a;
 }
+
 console.log('¿Es un triángulo?', isTriangle(3, 4, 6));
 
 //Unique In Order
@@ -215,6 +241,7 @@ console.log(
 );
 
 //Sort the odd
+
 const sortOddArray = (array) => {
   const odds = array.filter((item) => item % 2).sort((a, b) => a - b);
   return array.map((item) => (item % 2 ? odds.shift() : item));
@@ -223,6 +250,7 @@ const sortOddArray = (array) => {
 console.log('Ordena los impares', sortOddArray([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]));
 
 //Multiplica cada fila por cada columna dados dos arrays matriz
+
 const calculateElementRowColumTwoLevels = (arr1, arr2) =>
   arr1.map((f, i) => f.map((n, j) => n * arr2[j][i]));
 
@@ -242,10 +270,11 @@ console.log(
   )
 );
 
-//Multiplica cada fila por cada columna dados dos arrays Prueba KairosDS
+//Multiplica cada fila por cada columna dados dos arrays
 
 const calculateElementRowColum = (arr1, arr2) =>
   arr1.map((f, i) => f.map((n, j) => n * arr2[j][i])).flat();
+
 console.log(
   'Multiplica cada fila por columna',
   calculateElementRowColum(
@@ -339,6 +368,7 @@ console.log(
 );
 
 //Contar ovejas AdventJs
+
 const contarOvejas = (ovejas) =>
   ovejas
     .filter((oveja) => oveja.color === 'rojo')
@@ -388,6 +418,7 @@ console.log(isValid('() bici'));
 //no me funciona en la página de AdventJS
 
 //Filtrar valores únicos sin SET
+
 const unique = (array) => {
   let result = [];
   array.map((element) => {
@@ -401,6 +432,7 @@ const unique = (array) => {
 console.log('unique', unique([1, 2, 1, 2, 3, 4, 5, 3]));
 
 //Filtrar valores únicos con SET
+
 const uniqueSet = (array) => {
   let mySet = new Set();
   array.map((element) => mySet.add(element));
@@ -411,9 +443,11 @@ const uniqueSet = (array) => {
 console.log('uniqueSet', uniqueSet([1, 2, 1, 2, 3, 4, 5, 3]));
 
 //Traductor mimimimi
+
 const traductorMiMiMi = (word) => {
   return word.replace(/[aeiou]/g, 'i').replace(/[AEIOU]/g, 'I');
 };
+
 console.log(
   'Traductor mimimi',
   traductorMiMiMi('Me encanta programar. Estoy muy ilusionada')
@@ -429,4 +463,5 @@ function miniMaxSum(arr) {
   let maximum = sortArray.slice(1).reduce((a, b) => a + b);
   console.log(minimum, maximum);
 }
+
 miniMaxSum([13, 12, 9, 4, 2]);
