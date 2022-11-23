@@ -142,6 +142,13 @@ console.log(
   alphabetPosition("The sunset sets at twelve o'clock.")
 );
 
+//Counting Sheep
+
+const countSheeps = (arrayOfSheep) =>
+  arrayOfSheep
+    .map((element) => (element === true ? 1 : 0))
+    .reduce((a, b) => a + b, 0);
+
 //Moving Zeros To The End
 
 function moveZeros(arr) {
