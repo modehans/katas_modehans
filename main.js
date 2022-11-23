@@ -466,7 +466,7 @@ function miniMaxSum(arr) {
     .slice(0, sortArray.length - 1)
     .reduce((a, b) => a + b);
   let maximum = sortArray.slice(1).reduce((a, b) => a + b);
-  console.log(minimum, maximum);
+  console.log('Suma Mínima y máxima', minimum, maximum);
 }
 
 miniMaxSum([13, 12, 9, 4, 2]);
