@@ -470,3 +470,14 @@ function miniMaxSum(arr) {
 }
 
 miniMaxSum([13, 12, 9, 4, 2]);
+
+//Drawing book
+
+function pageCount(n, p) {
+  let frontPages = ~~(p / 2);
+  let backPages = Math.abs(~~(n / 2 - frontPages));
+  let result = Math.min(frontPages, backPages);
+  return result;
+}
+
+console.log(pageCount(47, 67));
