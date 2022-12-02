@@ -481,3 +481,21 @@ function pageCount(n, p) {
 }
 
 console.log(pageCount(47, 67));
+
+//reto 1 del #AdventJS 2022
+
+const gifts = ['book', 'game', 'socks'];
+
+function wrapping(gifts) {
+  const newArray = [];
+  gifts.forEach((element) => {
+    const stars = '*'.repeat(element.length + 2);
+    const gift = `*${element}*`;
+    newArray.push(`${stars}\n${gift}\n${stars}`);
+  });
+  return newArray;
+}
+
+const wrapped = wrapping(gifts);
+console.log(wrapped);
+console.log(wrapped[0]);
