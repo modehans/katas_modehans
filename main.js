@@ -521,3 +521,19 @@ console.log(
   'Horas extras a ralizar en el año',
   countHours(2022, ['01/06', '04/01', '12/25'])
 );
+
+//reto 3 del #AdventJS 2022
+
+const packOfGifts = ['book', 'doll', 'ball'];
+const reindeers = ['dasher33333', 'dancer'];
+function distributeGifts(packOfGifts, reindeers) {
+  const weightGifts = packOfGifts
+    .map((gift) => gift.length)
+    .reduce((a, b) => a + b);
+  const weightReindeers = reindeers
+    .map((reindeer) => reindeer.length * 2)
+    .reduce((a, b) => a + b);
+
+  return ~~(weightReindeers / weightGifts);
+}
+console.log(distributeGifts(packOfGifts, reindeers));
