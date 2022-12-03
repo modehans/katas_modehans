@@ -506,3 +506,18 @@ function wrapping(gifts) {
 const wrapped = wrapping(gifts);
 console.log(wrapped);
 console.log(wrapped[0]);
+
+//reto 2 del #AdventJS 2022
+
+function countHours(year, holidays) {
+  return (
+    holidays
+      .map((holiday) => new Date(`${holiday}/${year}`).getDay())
+      .filter((item) => item !== 0 && item !== 6).length * 2
+  );
+}
+
+console.log(
+  'Horas extras a ralizar en el año',
+  countHours(2022, ['01/06', '04/01', '12/25'])
+);
