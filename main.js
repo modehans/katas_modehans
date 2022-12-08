@@ -570,3 +570,52 @@ const boxes2 = [
 
 console.log('priemro', fitsInOneBox(boxes1));
 console.log('segundo', fitsInOneBox(boxes2));
+
+//Reto #5 del #AdventJS 2022
+
+function getMaxGifts(giftsCities, maxGifts, maxCities) {
+  let giftsRepartidos = [];
+  for (let m = 1; m < Math.pow(2, giftsCities.length); m++) {
+    // El número de combinaciones es 2^n
+    let comb = []; // La combinación de números
+    for (
+      let i = 0;
+      i < giftsCities.length;
+      i++ // Evaluamos cada elemento contra la máscara
+    ) {
+      if (Math.pow(2, i) & m) {
+        // ¿La posición del elemento cumple con la máscara?
+
+        comb.push(giftsCities[i]);
+      }
+      //console.log('Mascara ' + m, comb);
+      if (comb.length <= maxCities) {
+        let sum = comb.reduce((a, b) => a + b, 0); // La suma de la combinación
+        if (sum <= maxGifts) giftsRepartidos.push(sum);
+      }
+    }
+  }
+
+  return giftsRepartidos.length === 0 ? 0 : Math.max(...giftsRepartidos);
+}
+/* const allGifts = giftsCities.reduce((a, b) => a + b);
+if (giftsCities.every((element) => element > maxGifts)) {
+  return 0;
+} else if 
+  (allGifts / maxGifts > maxCities || allGifts < maxGifts) {
+    return Math.max(...giftsCities);
+  } else {
+    return maxGifts;
+  }
+ */
+
+console.log(getMaxGifts([12, 3, 11, 5, 7], 20, 3)); // 20
+console.log(getMaxGifts([50], 15, 1)); // 0
+console.log(getMaxGifts([50], 100, 1)); // 50
+console.log(getMaxGifts([50, 70], 100, 1)); // 70
+console.log(getMaxGifts([50, 70, 30], 100, 2)); // 100
+console.log(getMaxGifts([50, 70, 30], 100, 3)); // 100
+console.log(getMaxGifts([50, 70, 30], 100, 4)); // 100
+
+console.log(getMaxGifts([50, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 1000, 1000)); //115
+console.log(getMaxGifts([50, 10, 40, 1000, 500, 200], 199, 4)); //100
