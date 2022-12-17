@@ -619,3 +619,9 @@ console.log(getMaxGifts([50, 70, 30], 100, 4)); // 100
 
 console.log(getMaxGifts([50, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 1000, 1000)); //115
 console.log(getMaxGifts([50, 10, 40, 1000, 500, 200], 199, 4)); //100
+
+// CamelCase HeckerRank Palabras contiene el  string en camelCase
+function camelcase(s) {
+  return s.split(/[A-Z]/g).length;
+}
+console.log(camelcase('estoEsUnaPrueba'));
